@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <title>تسجيل الدخول والتسجيل</title>
+    <link rel="stylesheet" href="../Styles/login.css"> 
+</head>
+<body>
+
+
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <div class="side-list">
+            <label id="overlay" for="sidebar-active"></label>
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+            <ul class="login">
+                <li><a href="../HTML/سجل الدخول.html"><i class="fa-solidc fa-right-to-bracket"></i>تسجيل الدخول</a></li>
+            </ul>
+
+            <ul class="base_list">
+                <li><a href="../HTML/الصفحة الرئيسية.html"><i class="fa-solid fa-house"></i>الصفحة الرئيسية</a></li>
+                <li><a href="../HTML/الملف الشخصي.html"><i class="fa-regular fa-address-card"></i>الملف الشخصي</a></li>
+                <li><a href="../HTML/تواصل معنا.html"><i class="fa-solid fa-inbox"></i>اتصل بنا</a></li>
+            </ul>
+
+            <ul class="service_list">
+                <li><a href="../HTML/توصيات الاعمال.html "><i class="fa-solid fa-tag"></i>توصيات الأعمال</a></li>
+                <li><a href="../HTML/التصميم الداخلي.html"><i class="fa-solid fa-tag"></i>التصميم الداخلي</a></li>
+                <li><a href="../HTML/الهوية التجارية.html"><i class="fa-solid fa-tag"></i>الهوية التجارية</a></li>
+                <li><a href="../HTML/التحليل المالي.html"><i class="fa-solid fa-tag"></i>التحليل المالي</a></li>
+            </ul>
+
+            <ul class="logout">
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>تسجيل خروج</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container"> 
+        <div class="forms-container">
+            <div class="login-signup">
+                <!-- LOGIN--> 
+                <form action="" class="login-form">
+                    <h2 class="title">تسجيل الدخول</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="اسم المستخدم" required pattern="[A-Za-z0-9]+" title="يجب أن يحتوي اسم المستخدم على أحرف وأرقام فقط"> 
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="كلمة المرور" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*-).*$" title="يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل، وحرف صغير واحد، وشرطة واحدة (-)">
+                    </div>                    
+                    <input type="submit" value="Login" class="btn"> 
+                </form>
+                     <!-- SIGN UP -->
+                <form action="" class="signup-form">
+                    <h2 class="title">تسجيل</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="الاسم الكامل (الأول والأخير)" required pattern="[A-Za-z]+\s[A-Za-z]+" title="أدخل اسمك الكامل مع الاسم الأول والأخير">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="اسم المستخدم" required pattern="[A-Za-z0-9]+" title="يجب أن يحتوي اسم المستخدم على أحرف وأرقام فقط"> 
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="بريد إلكتروني" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="أدخل عنوان بريد إلكتروني صالح"> 
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" placeholder="رقم الهاتف" pattern="05[0-9]{8}" title="يجب أن يبدأ رقم الهاتف بـ 05 وأن يتكون من 10 أرقام بدءًا من الحرف الثاني">
+                    </div>                    
+                    <div class="input-field">
+                        <i class="fas fa-map-marker"></i>
+                        <input type="text" placeholder="العنوان">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="كلمة المرور" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*-).*$" title="يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل، وحرف صغير واحد، وشرطة واحدة (-)">
+                    </div>
+                    
+                    <input type="submit" value="Sign" class="btn"> 
+                </form>
+            </div>
+            
+            <div class="panels-container"> 
+                <div class="panel left-panel">
+                    <div class="content">
+                        <h3>جديد هنا ؟</h3>
+                        <p>عزز رحلتك الريادية مع منصة رواد. أطلق العنان للنمو وتغلب على التحديات وحقق النجاح في العمل.</p>
+                        <button class="btn transparent" id="signup-btn">تسجيل</button>
+                    </div>
+                    <img src="../Media/login.svg" class="image" alt="PHOTO FOR LOGIN AND SIGN UP PAGE">
+                </div>
+                
+                <div class="panel right-panel">
+                    <div class="content">
+                        <h3>واحد منا؟</h3>
+                        <p>عزز رحلتك الريادية مع منصة رواد. أطلق العنان للنمو وتغلب على التحديات وحقق النجاح في العمل.</p>
+                        <button class="btn transparent" id="login-btn">تسجيل الدخول</button> 
+                    </div>
+                    <img src="../Media/signup.svg" class="image" alt="PHOTO FOR LOGIN AND SIGN UP PAGE">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/login_and_sign_up.js"></script>
+
+    <footer>
+        <p>© ٢٠٢٤ رواد. جميع الحقوق محفوظة.</p>
+        <p>تابعنا على <a href="#">روابط وسائل التواصل الاجتماعي</a></p>
+    </footer>
+</body>
+</html>

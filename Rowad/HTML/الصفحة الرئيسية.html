@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الرئيسية</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../Styles/Home.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <a href="../HTML/الصفحة الرئيسية.html"><img src="../Media/RowadLOGO.jpg" class="logo"></a>
+        
+        <ul class="nav_list">
+            <li><a href="../HTML/توصيات الاعمال.html">توصيات الأعمال</a></li>
+            <li><a href="../HTML/التصميم الداخلي.html">التصميم الداخلي</a></li>
+            <li><a href="../HTML/الهوية التجارية.html">الهوية التجارية</a></li>
+            <li><a href="../HTML/التحليل المالي.html">التحليل المالي</a></li>
+        </ul>
+
+        <a href="../HTML/login.html"><button id="log" type="button">تسجيل الدخول</button></a>
+
+        <a href="../HTML/Home.html"><button id="lang" type="button">EN</button></a>
+
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <div class="side-list">
+            <label id="overlay" for="sidebar-active"></label>
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+            <ul class="login">
+                <li><a href="../HTML/سجل الدخول.html"><i class="fa-solidc fa-right-to-bracket"></i>تسجيل الدخول</a></li>
+            </ul>
+
+            <ul class="base_list">
+                <li><a href="../HTML/الملف الشخصي.html"><i class="fa-regular fa-address-card"></i>الملف الشخصي</a></li>
+                <li><a href="../HTML/تواصل معنا.html"><i class="fa-solid fa-inbox"></i>تواصل معنا</a></li>
+            </ul>
+
+            <ul class="logout">
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>تسجيل خروج</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="image"></div>
+    
+    <div class="home">
+        <div class="intro-home">
+            <div class="intro1">
+                <h1>روََاد</h1><br>
+                <p>أطلق العنان لقوة عملك مع<br>مع حلولنا الفريدة</p>            
+            </div>
+
+            <div class="intro2">
+                <h1>اكتشف خدماتنا</h1>
+            </div>
+
+            <a href="../HTML/سجل الدخول.html"><button id="sign" type="button">سجل الآن</button></a>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-content">
+        <h1>هدفنا</h1>
+        <p>اختيار الموقع المثالي بناءً على تحليل البيانات الجغرافية واحتياجات السوق والعديد من العوامل الأخرى.<br>
+            يهدف الموقع إلى تمكين رواد الأعمال من تحقيق النمو والتوسع المستدام، من خلال تقديم
+            خدمات شاملة مثل إنشاء هوية تجارية وتصميم داخلي قائم على الذكاء الاصطناعي وإرشادات الخبراء لتجنب خطر الإفلاس.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="service-section">
+            <h1>استكشف الحلول المخصصة لنجاحك</h1>
+            <div class="card-container">
+                <div class="card">
+                    <h3>تصميم هوية التجارية</h3>
+                    <p>إنشاء هوية العمل، بما في ذلك العلامة التجارية، والشعارات، والمزيد</p>
+                    <a href="../HTML/businessIdentity.html"><button>ابدأ الآن!</button></a>
+                </div>
+                <div class="card">
+                    <h3>توصيات الاعمال</h3>
+                    <p>تقديم أفكار تجارية بناءً على البيانات المجمعة مثل الموقع الجغرافي، والسكان، واحتياجات السوق</p>
+                    <a href="../HTML/BusinessRecommendation.html"><button>ابدأ الآن!</button></a>
+                </div>
+                <div class="card">
+                    <h3>أفكار التصميم الداخلي</h3>
+                    <p>اقتراح تصميمات داخلية باستخدام الذكاء الاصطناعي</p>
+                    <a href="../HTML/InteriorDesign.html"><button>ابدأ الآن!</button></a>
+                </div>
+                <div class="card">
+                    <h3>التحليل المالي</h3>
+                    <p>افتح إمكانياتك المالية. نجاحك، أولويتنا.</p>
+                    <a href="../HTML/FinancialAnalysis.html"><button>ابدأ الآن!</button></a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="service-section">
+            <h1>الخدمات الإضافية</h1>
+            <div class="services-container">
+                <div class="service-card ServiceLeft">
+                    <h2>لوحات الألوان</h2>
+                    <p>اكتشف هذه اللوحات الرائعة من الألوان ودعها تلهمك لإنشاء شيء استثنائي.</p>
+                    <a href="../HTML/colors.html"><button>ابدأ الآن!</button></a>
+                </div>
+                <div class="service-card ServiceRight">
+                    <h2>أسماء الأعمال/العلامات التجارية</h2>
+                    <p>سمها، وامتلكها، واصنعها!</p>
+                    <a href="../HTML/Brand_Name.html"><button>ابدأ الآن!</button></a>
+                </div>
+            </div>
+        </section>
+        
+
+        <sectionCU>
+            <div class = "imageCU">
+               <img src="../Media/us.png">
+            </div>
+
+            <div class = "contentCU">
+                <h2>عننا</h2>
+                <span><!-- line here --></span>
+                <p>مرحبًا بكم في رواد! نحن مجموعة ديناميكية ومبتكرة مكرسة لتعزيز ريادة الأعمال وتمكين قادة
+                 الأعمال الطموحين. تتمثل مهمتنا في توفير منصة تزود الأفراد بالأدوات التي يحتاجون إليها للنجاح في عالم الأعمال. مع فريق متحمس ومجتمع نابض بالحياة، نسعى جاهدين لخلق
+                 بيئة تزدهر فيها الأفكار وتصبح الأحلام حقيقة. انضم إلينا في هذه الرحلة المثيرة من النمو والفرص!</p>
+            </div>
+        </sectionCU>
+    </main>
+
+    <footer>
+        <p>© ٢٠٢٤ رواد. جميع الحقوق محفوظة.</p>
+        <p>تابعنا على <a href="#">روابط وسائل التواصل الاجتماعي</a></p>
+    </footer>
+</body> 
+</html>

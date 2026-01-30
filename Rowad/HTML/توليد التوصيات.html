@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توليد التوصيات</title>
+
+    <!-- Link to External CSS for Fonts, Icons, and Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/theme.css">
+    <link rel="stylesheet" href="../Styles/deployment.css">
+    <link rel="stylesheet" href="../Styles/Home.css">
+</head>
+<body>
+    <!-- side bar -->
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <div class="side-list">
+            <label id="overlay" for="sidebar-active"></label>
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+            <ul class="login">
+                <li><a href="../HTML/سجل الدخول.html"><i class="fa-solidc fa-right-to-bracket"></i>سجل الدخول</a></li>
+            </ul>
+
+            <ul class="base_list">
+                <li><a href="../HTML/الصفحة الرئيسية.html"><i class="fa-solid fa-right-to-bracket"></i>الصفحة الرئسية</a></li>
+                <li><a href="../HTML/الملف الشخصي.html"><i class="fa-regular fa-address-card"></i>الملف الشخصي</a></li>
+                <li><a href="../HTML/تواصل معنا.html"><i class="fa-solid fa-inbox"></i>تواصل معنا</a></li>
+            </ul>
+
+            <ul class="service_list">
+                <li><a href="../HTML/توصيات الاعمال.html"><i class="fa-solid fa-tag"></i>توصيات الاعمال</a></li>
+                <li><a href="../HTML/التصميم الداخلي.html"><i class="fa-solid fa-tag"></i>التصميم الداخلي</a></li>
+                <li><a href="../HTML/الهوية التجارية.html"><i class="fa-solid fa-tag"></i>الهوية التجارية</a></li>
+                <li><a href="../HTML/التحليل المالي.html"><i class="fa-solid fa-tag"></i>التحليل المالي</a></li>
+            </ul>
+
+            <ul class="logout">
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content with Deployment Dropdown Buttons -->
+    <main style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column;">
+        <div class="deployment-buttons">
+            <!-- Industry Dropdown -->
+            <div class="dropdown">
+                <button id="industryButton" class="btn" onclick="toggleDropdown('industryDropdown')">التجارة</button>
+                <div id="industryDropdown" class="dropdown-content">
+                    <a href="#" onclick="selectIndustry('Restaurant')">مطعم</a>
+                    <a href="#" onclick="selectIndustry('Medical')">طبي</a>
+                    <a href="#" onclick="selectIndustry('Education')">تعليم</a>
+                    <a href="#" onclick="selectIndustry('Sport')">رياضة</a>
+                    <a href="#" onclick="selectIndustry('Beauty')">جمال</a>
+                    <a href="#" onclick="selectIndustry('Cars')">سيارات</a>
+                    <a href="#" onclick="selectIndustry('Hotels')">فنادق</a>
+                    <a href="#" onclick="selectIndustry('Malls and Stores')">مولات ومحلات</a>
+                    <a href="#" onclick="selectIndustry('Flowers & Gifts')">ورود وهدايا</a>
+                </div>
+            </div>
+
+            <!-- Type Dropdown -->
+            <div class="dropdown">
+                <button id="typeButton" class="btn" onclick="toggleDropdown('typeDropdown')">نوعها</button>
+                <div id="typeDropdown" class="dropdown-content">
+                    <!-- Type options will be dynamically generated here -->
+                </div>
+            </div>
+
+            <!-- Neighborhood Dropdown -->
+            <div class="dropdown">
+                <button id="neighborhoodButton" class="btn" onclick="toggleDropdown('neighborhoodDropdown')">الحي</button>
+                <div id="neighborhoodDropdown" class="dropdown-content">
+                    <!-- Neighborhood options will be dynamically generated here -->
+                </div>
+            </div>
+
+            <!-- Generate Button (No dropdown) -->
+            <button class="btn generate-btn" onclick="showSelections()">أنتج</button>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© ٢٠٢٤ رواد. جميع الحقوق محفوظة.</p>
+        <p>تابعنا على <a href="#">روابط وسائل التواصل الاجتماعي</a></p>
+    </footer>
+
+    <script>
+        let selectedIndustry = "";
+        let selectedType = "";
+        let selectedNeighborhood = "";
+
+        function toggleDropdown(dropdownId) {
+            document.getElementById(dropdownId).classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        };                    
+        const typeOptions = {
+            'Restaurant': [
+                'Coffee shop', 'Breakfast Restaurant', 'Lounge', 'Middle Eastern Restaurant', 'Japanese Restaurant',
+                'Italian Restaurant', 'Sea Food Restaurant', 'Fast Food Restaurant', 'Shawarma Restaurant', 'Pizza Restaurant',
+                'Chicken Restaurant', 'Rice Restaurant', 'Beef Restaurant', 'Turkish Restaurant', 'Mexican Restaurant',
+                'Korean Restaurant', 'Indian Restaurant', 'Lebanese Restaurant', 'French Restaurant', 'American Restaurant',
+                'African Restaurant', 'Shaabi Restaurant', 'Chinese Restaurant', 'Asian Restaurant', 'Greek Restaurant',
+                'Uzbeki Restaurant', 'Thai Restaurant', 'Brazilian Restaurant', 'Egyptian Restaurant', 'Chocolate shop', 
+                'Ice cream shop'
+            ],
+            'Medical': [
+                'Pharmacy', 'Medical Clinic', 'Physical Therapy Clinic', 'Dental Clinic', 'Eye Care Center', 'Hospital',
+                'Rheumatologist', 'Veterinarian', 'Beauty Clinic', 'Psychiatrist', 'Radiology Center', 'Laboratory'
+            ],
+            'Education': [
+                'International School', 'Private School', 'Public School', 'English Institute', 'Kindergarten', 'University',
+                'Business School', 'Training Center', 'Religious School', 'Primary School', 'Secondary School', 'Middle School',
+                'Vocational School', 'Technical Institute', 'Quran Memorization School', 'Nursery'
+            ],
+            'Sport': [
+                'Gym', 'Yoga Studio', 'Sports Club', 'Martial Arts', 'Swimming Pool', 'Sports Academy', 'Fitness Center', 
+                'Boxing Studio', 'Pilates Studio', 'Tennis Club', 'Padel Club'
+            ],
+            'Beauty': [
+                'Beauty Salon', 'Nail Salon', 'Barber Shop', 'Spa', 'Beauty Clinic', 'Cosmetics', 'Makeup Studio',
+                'Hair Removal Center', 'Massage Center', 'Skin Care Clinic'
+            ],
+            'Cars': [
+                'Car Dealership', 'Auto Repair', 'Car Wash', 'Car Rental', 'Car Accessories', 'Tire Shop', 
+                'Motorcycle Dealership'
+            ],
+            'Hotels': [
+                'Luxury Hotel', 'Budget Hotel', 'Hostel', 'Resort', 'Motel', 'Boutique Hotel', 'Apartment Hotel', 
+                'Furnished Apartment'
+            ],
+            'Malls and Stores': [
+                'Shopping Mall', 'Department Store', 'Supermarket', 'Electronics Store', 'Children Clothing Store', 
+                'Jewelry Store', 'Furniture Store', 'Abaya Store', 'Cosmetics Boutique', 'Shoe Store', 
+                'Fashion Boutique', 'Toy Store', 'Home Decor', 'Bookstore', 'Music Store', 'Pet Shop', 
+                'Sportswear Store', 'Gift Shop', 'Optics Store', 'Perfume Shop', 'Watch Store'
+            ],
+            'Flowers & Gifts': [
+                'Flower shop', 'Sweets shop', 'Balloon shop', 'Jewelry shop'
+            ]
+        };
+
+        const neighborhoodOptions = [
+            'Al Zahra', 'Ash Shati', 'Al Rawdah', 'Al Basateen', 'Al Muhammadiyyah', 'Al Naeem', 'As Salamah', 
+            'Obhur Al Shamaliyah', 'Obhur Al Janoubiyah', 'Al Murjan', 'Al Mohammadiyyah', 'Al Nahdah'
+        ];
+
+        function selectIndustry(industry) {
+            selectedIndustry = industry;
+            document.getElementById("industryButton").textContent = industry;
+            const typeDropdown = document.getElementById('typeDropdown');
+            typeDropdown.innerHTML = '';
+
+            if (typeOptions[industry]) {
+                typeOptions[industry].forEach(type => {
+                    const option = document.createElement('a');
+                    option.href = '#';
+                    option.textContent = type;
+                    option.onclick = () => selectType(type);
+                    typeDropdown.appendChild(option);
+                });
+            }
+        }
+
+        function selectType(type) {
+            selectedType = type;
+            document.getElementById("typeButton").textContent = type;
+        }
+
+        function populateNeighborhoodDropdown() {
+            const neighborhoodDropdown = document.getElementById('neighborhoodDropdown');
+            neighborhoodDropdown.innerHTML = '';
+
+            neighborhoodOptions.forEach(neighborhood => {
+                const option = document.createElement('a');
+                option.href = '#';
+                option.textContent = neighborhood;
+                option.onclick = () => selectNeighborhood(neighborhood);
+                neighborhoodDropdown.appendChild(option);
+            });
+        }
+
+        function selectNeighborhood(neighborhood) {
+            selectedNeighborhood = neighborhood;
+            document.getElementById("neighborhoodButton").textContent = neighborhood;
+        }
+
+        function showSelections() {
+            alert(`Selected Industry: ${selectedIndustry || 'None'}, Type: ${selectedType || 'None'}, Neighborhood: ${selectedNeighborhood || 'None'}`);
+        }
+
+        // Initialize Neighborhood options
+        populateNeighborhoodDropdown();
+
+        // Placeholder function for Generate button functionality
+        function showSelections() {
+    alert("Generate functionality coming soon!");
+}
+    </script>
+
+</body>
+</html>

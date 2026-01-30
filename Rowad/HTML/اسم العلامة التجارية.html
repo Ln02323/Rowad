@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>مولد أسماء العلامات التجارية</title>
+    <link rel="stylesheet" type="text/css" href="../Styles/Brand_Name.css">
+</head>
+<body>
+    
+    <header>
+        مولد أسماء العلامات التجارية
+    </header>
+
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+    
+        <div class="side-list">
+            <label id="overlay" for="sidebar-active"></label>
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+    
+            <ul class="login">
+                <li><a href="../HTML/سجل الدخول.html"><i class="fa-solidc fa-right-to-bracket"></i>تسجيل الدخول</a></li>
+            </ul>
+    
+            <ul class="base_list">
+                <li><a href="../HTML/الصفحة الرئيسية.html"><i class="fa-solid fa-house"></i>الصفحة الرئيسية</a></li>
+                <li><a href="../HTML/الملف الشخصي.html"><i class="fa-regular fa-address-card"></i>الملف الشخصي</a></li>
+                <li><a href="../HTML/تواصل معنا.html"><i class="fa-solid fa-inbox"></i> تواصل معنا</a></li>
+            </ul>
+    
+            <ul class="service_list">
+                <li><a href="../HTML/توصيات الاعمال.html "><i class="fa-solid fa-tag"></i>توصيات الأعمال</a></li>
+                <li><a href="../HTML/التصميم الداخلي.html"><i class="fa-solid fa-tag"></i>التصميم الداخلي</a></li>
+                <li><a href="../HTML/الهوية التجارية.html"><i class="fa-solid fa-tag"></i>الهوية التجارية</a></li>
+                <li><a href="../HTML/التحليل المالي.html"><i class="fa-solid fa-tag"></i>التحليل المالي</a></li>
+            </ul>
+    
+            <ul class="logout">
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>تسجيل خروج</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        
+        <h2>صمم اسم العلامة التجارية المثالي</h2>
+        <form id="brandForm">
+            <label for="type">اختر نوع النشاط التجاري</label>
+            <select id="type" name="type" onchange="updateSubtypes()">
+                <option value="">-- اختر --</option>
+                <option value="restaurant">مطعم</option>
+                <option value="cafe">مقهى</option>
+                <option value="gym">صالة رياضية</option>
+                <option value="store">متجر</option>
+                <option value="park">منتزه</option>
+            </select>
+            <label for="subtype">اختر النوع الفرعي</label>
+            <select id="subtype" name="subtype">
+                <option value="">-- اختر --</option>
+            </select>
+            <button type="button" onclick="generateNames()">إنشاء</button>
+        </form>
+        <h3 style="text-align:center; margin-top:20px;">الأسماء المُقترحة</h3>
+        <ul id="namesList"></ul>
+    </main>
+
+    <img src="../Media/SharpEnd.jpg" alt="background">
+
+    <script>
+        const subtypes = {
+            restaurant: ["وجبات سريعة", "طعام فاخر", "مأكولات بحرية", "مطعم لحوم"],
+            cafe: ["مقهى قهوة", "بار حلوى", "بيت شاي", "مقهى إنترنت"],
+            gym: ["تدريب شخصي", "كروس فيت", "استوديو يوغا", "جيم كارديو"],
+            store: ["ملابس", "إلكترونيات", "بقالة", "أثاث"],
+            park: ["مدينة ملاهي", "منتزه مائي", "حديقة نباتية", "منتزه وطني"]
+        };
+
+    const brandNames = {
+        restaurant: {
+            "وجبات سريعة": ["برغر بليتز", "قضمات سريعة", "اندفاع النكهات", "دلائل القيادة السريعة"],
+            "طعام فاخر": ["الشوكة الذهبية", "تناول الطعام الفاخر", "طاولة الفخامة", "جنة الذواقة"],
+            "مأكولات بحرية": ["صيد المحيط", "قضمات الأمواج الزرقاء", "وليمة نبتون", "عشاء نسيم البحر"],
+            "مطعم لحوم": ["قطع مميزة", "أساتذة اللحم", "جنة المشويات", "اللحم والبرميل"]
+        },
+        cafe: {
+            "مقهى قهوة": ["سعادة الحبوب", "تحميص الصباح", "جنة التحضير", "ركن الكافيين"],
+            "بار حلوى": ["الحلويات اللذيذة", "جنة الحلويات", "سعادة السكر", "لذة الشوكولاتة"],
+            "بيت شاي": ["وقت الشاي", "ورقة خضراء", "ركن الشاي", "هدوء النقع"],
+            "مقهى إنترنت": ["مشروبات الإنترنت", "مقهى الواي فاي", "مقهى الاتصال بالشبكة", "مشروبات رقمية"]
+        },
+        gym: {
+            "تدريب شخصي": ["تركيز اللياقة", "تدريب بروفيسيونال", "الحافة الشخصية", "أعمال الجسم"],
+            "كروس فيت": ["كروس فيت النخبة", "الصندوق", "باور فيت", "الدائرة الحديدية"],
+            "استوديو يوغا": ["سعادة اليوغا", "استوديو الزن", "تدفق التناغم", "السلام الداخلي"],
+            "جيم كارديو": ["ضخ القلب", "منطقة الكارديو", "تريد لياقة", "مركز التحمل"]
+        },
+        store: {
+            "ملابس": ["مركز الأناقة", "الأزياء المتقدمة", "الرواد في الموضة", "خزانة الملابس المركزية"],
+            "إلكترونيات": ["ملاذ التكنولوجيا", "عالم الأدوات", "إلكترونيات مارت", "حلول ذكية"],
+            "بقالة": ["السوق الطازج", "المنتجات اليومية", "السلة الخضراء", "بانتري بلس"],
+            "أثاث": ["ملاذ المنزل", "أثاث سنترال", "العيش المريح", "مساحة الأناقة"]
+        },
+        park: {
+            "مدينة ملاهي": ["عالم الإثارة", "أرض المغامرات", "حديقة العجائب", "منطقة الخيال"],
+            "منتزه مائي": ["عالم الرش", "أكوا لاند", "ملاذ الأمواج", "مرح H2O"],
+            "حديقة نباتية": ["ملاذ الأخضر", "حديقة النباتات", "تفتح الطبيعة", "حديقة بيئية"],
+            "منتزه وطني": ["مسارات برية", "محمية طبيعية", "هروب الجبال", "جنة المستكشفين"]
+        }
+};
+
+
+        function updateSubtypes() {
+            const type = document.getElementById("type").value;
+            const subtypeSelect = document.getElementById("subtype");
+            subtypeSelect.innerHTML = `<option value="">-- اختر --</option>`;
+            if (type && subtypes[type]) {
+                subtypes[type].forEach(subtype => {
+                    const option = document.createElement("option");
+                    option.value = subtype;
+                    option.textContent = subtype;
+                    subtypeSelect.appendChild(option);
+                });
+            }
+        }
+
+        function generateNames() {
+            const type = document.getElementById("type").value;
+            const subtype = document.getElementById("subtype").value;
+            const namesList = document.getElementById("namesList");
+            namesList.innerHTML = "";
+            if (!type || !subtype) {
+                alert("يرجى اختيار النوع والنوع الفرعي!");
+                return;
+            }
+            const names = brandNames[type]?.[subtype] || ["لا توجد أسماء متاحة."];
+            names.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                namesList.appendChild(li);
+            });
+        }
+    </script>
+        <footer>
+        <p>© ٢٠٢٤ رواد. جميع الحقوق محفوظة.</p>
+        <p>تابعنا على <a href="#">روابط وسائل التواصل الاجتماعي</a></p>
+    </footer>
+</body>
+</html>

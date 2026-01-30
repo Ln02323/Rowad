@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Analysis</title>
+    <link rel="stylesheet" href="../Styles/financ.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/BusinessRecommendation.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <div class="side-list">
+            <label id="overlay" for="sidebar-active"></label>
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+            <ul class="login">
+                <li><a href="../HTML/سجل الدخول.html"><i class="fa-solidc fa-right-to-bracket"></i>تسجيل الدخول</a></li>
+            </ul>
+
+            <ul class="base_list">
+                <li><a href="../HTML/الصفحة الرئيسية.html"><i class="fa-solid fa-house"></i>الصفحة الرئيسية</a></li>
+                <li><a href="../HTML/الملف الشخصي.html"><i class="fa-regular fa-address-card"></i>الملف الشخصي</a></li>
+                <li><a href="../HTML/تواصل معنا.html"><i class="fa-solid fa-inbox"></i>اتصل بنا</a></li>
+            </ul>
+
+            <ul class="service_list">
+                <li><a href="../HTML/توصيات الاعمال.html "><i class="fa-solid fa-tag"></i>توصيات الأعمال</a></li>
+                <li><a href="../HTML/التصميم الداخلي.html"><i class="fa-solid fa-tag"></i>التصميم الداخلي</a></li>
+                <li><a href="../HTML/الهوية التجارية.html"><i class="fa-solid fa-tag"></i>الهوية التجارية</a></li>
+                <li><a href="../HTML/التحليل المالي.html"><i class="fa-solid fa-tag"></i>التحليل المالي</a></li>
+            </ul>
+
+            <ul class="logout">
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>تسجيل خروج</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <header>
+                <h1>تحليل البيانات المالية</h1>
+            </header>
+            <div class="content">
+                <div class="left-section">
+                    <div class="inputs">
+                        <label for="revenue">الإيرادات:</label>
+                        <input type="text" id="revenue" placeholder="أدخل الإيرادات">
+                        
+                        <label for="cost">التكلفة:</label>
+                        <input type="text" id="cost" placeholder="أدخل التكلفة">
+                        
+                        <label for="netProfit">صافي الربح:</label>
+                        <input type="text" id="netProfit" placeholder="أدخل صافي الربح">
+                        
+                        <label for="investment">الاستثمار:</label>
+                        <input type="text" id="investment" placeholder="أدخل الاستثمار">
+                    </div>
+                    <div class="services">
+                        <p>اختر الخدمات المالية التي ترغب في استخدامها:</p>
+                        <label><input type="checkbox" id="profitLossCheckbox"> حساب الربح أو الخسارة</label>
+                        <label><input type="checkbox" id="profitMarginCheckbox"> حساب هامش الربح</label>
+                        <label><input type="checkbox" id="roiCheckbox"> حساب العائد على الاستثمار (ROI)</label>
+                        <label><input type="checkbox" id="chartCheckbox"> عرض الرسم البياني</label>
+                        <div class="chart-type">
+                            <label for="chartType">نوع الرسم البياني:</label>
+                            <select id="chartType">
+                                <option value="bar">رسم بياني عمودي</option>
+                                <option value="line">رسم بياني خطي</option>
+                                <option value="pie">رسم بياني دائري</option>
+                                <option value="doughnut">رسم بياني دونات</option>
+                            </select>
+                        </div>
+                        <button id="updateButton" class="creative-button">🔄 تحديث</button>
+                    </div>
+                    <div id="results">
+                        <p id="profitLossResult"></p>
+                        <p id="profitMarginResult"></p>
+                        <p id="result"></p>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <canvas id="financialChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../JS/financ.js"></script>
+    <footer>
+        <p>© 2024 رواد. جميع الحقوق محفوظة.</p>
+        <p>تابعنا على <a href="#">روابط وسائل التواصل الاجتماعي</a></p>
+    </footer>
+    
+</body>
+</html>

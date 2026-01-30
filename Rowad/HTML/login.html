@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <title>Login & Sign up</title>
+    <link rel="stylesheet" href="../Styles/login.css"> 
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <div class="side-list">
+            <label id="overlay" for="sidebar-active"></label>
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+            <ul class="login">
+                <li><a href="../HTML/login.html"><i class="fa-solidc fa-right-to-bracket"></i>Login</a></li>
+            </ul>
+
+            <ul class="base_list">
+                <li><a href="../HTML/Home.html"><i class="fa-solid fa-right-to-bracket"></i>Home</a></li>
+                <li><a href="../HTML/profile.html"><i class="fa-regular fa-address-card"></i>Profile</a></li>
+                <li><a href="../HTML/ContactUs.html"><i class="fa-solid fa-inbox"></i>Contac us</a></li>
+            </ul>
+
+            <ul class="service_list">
+                <li><a href="../HTML/BusinessRecommendation.html"><i class="fa-solid fa-tag"></i>Business Recommendations</a></li>
+                <li><a href="../HTML/InteriorDesign.html"><i class="fa-solid fa-tag"></i>Interior Design</a></li>
+                <li><a href="../HTML/businessIdentity.html"><i class="fa-solid fa-tag"></i>Business Identity</a></li>
+                <li><a href="../HTML/FinancialAnalysis.html"><i class="fa-solid fa-tag"></i>Financial Analysis</a></li>
+            </ul>
+
+            <ul class="logout">
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container"> 
+        <div class="forms-container">
+            <div class="login-signup">
+                <!-- LOGIN--> 
+                <form action="" class="login-form">
+                    <h2 class="title">Login</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" required pattern="[A-Za-z0-9]+" title="Username must contain only letters and numbers"> 
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*-).*$" title="Password must contain at least one uppercase letter, one lowercase letter, and one dash (-)">
+                    </div>                    
+                    <input type="submit" value="Login" class="btn"> 
+                </form>
+                     <!-- SIGN UP -->
+                <form action="" class="signup-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Full Name (First and Last)" required pattern="[A-Za-z]+\s[A-Za-z]+" title="Enter your full name with first and last name">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" required pattern="[A-Za-z0-9]+" title="Username must contain only letters and numbers"> 
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Enter a valid email address"> 
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" placeholder="Phone Number" pattern="05[0-9]{8}" title="Phone number must start with 05 and be 10 digits long starting from the second character">
+                    </div>                    
+                    <div class="input-field">
+                        <i class="fas fa-map-marker"></i>
+                        <input type="text" placeholder="Address">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*-).*$" title="Password must contain at least one uppercase letter, one lowercase letter, and one dash (-)">
+                    </div>
+                    
+                    <input type="submit" value="Sign" class="btn"> 
+                </form>
+            </div>
+            
+            <div class="panels-container"> 
+                <div class="panel left-panel">
+                    <div class="content">
+                        <h3>New here ?</h3>
+                        <p>Fuel Your Entrepreneurial Journey with Rowad Platform. Unlock growth, overcome challenges, and succeed in business.</p>
+                        <button class="btn transparent" id="signup-btn">Sign up</button>
+                    </div>
+                    <img src="../Media/login.svg" class="image" alt="PHOTO FOR LOGIN AND SIGN UP PAGE">
+                </div>
+                
+                <div class="panel right-panel">
+                    <div class="content">
+                        <h3>One of us?</h3>
+                        <p>Fuel Your Entrepreneurial Journey with Rowad Platform. Unlock growth, overcome challenges, and succeed in business.</p>
+                        <button class="btn transparent" id="login-btn">Login</button> 
+                    </div>
+                    <img src="../Media/signup.svg" class="image" alt="PHOTO FOR LOGIN AND SIGN UP PAGE">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/login_and_sign_up.js"></script>
+    <footer>
+        <p>© 2024 Rowad. All Rights Reserved.</p>
+        <p>Follow us on <a href="#">Social Media Links</a></p>
+    </footer>
+</body>
+</html>
