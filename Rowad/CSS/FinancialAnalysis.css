@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Parkinsans', sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100vh;
+    background: url(../Media/mony.png) center/cover no-repeat; /* Set image with positioning and scaling */
+    background-blend-mode: overlay; /* Optional: blend with gradient if needed */
+    /* Uncomment the gradient below to overlay with the background image */
+    /* background: linear-gradient(270deg, #588157, #f0ead2), url(../Media/mony.png) center/cover no-repeat; */
+    overflow: hidden;
+}
+
+
+nav svg {
+    fill: #056773;
+    transition: all 0.3s ease 0s;
+    right: 0;
+}
+
+nav svg:hover {
+    fill: #FFA200;
+}
+
+.close-sidebar-button svg {
+    padding-top: 1rem;
+}
+
+.side-list {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    left: -370px;
+    width: 360px;
+    background-color: rgb(235, 244, 252);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.50s ease-out;
+}
+
+.base_list li, .service_list li, .login li{
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 10px 30px;
+    justify-content: flex-start;
+    font-size: 16px;
+    padding-top: 1rem;
+    margin: 13px;
+}
+
+.service_list, .base_list{
+    border-top: 1px solid #05667344;
+}
+
+.logout{
+    margin-top: 5rem;    
+    border-top: 3px solid #05667344;
+
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    padding: 15px 30px;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #056773;
+    font-size: 16px;
+}
+
+.base_list li a, .service_list li a, .logout li a, .login li a{
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #056773;
+}
+
+.base_list li a:hover, .service_list li a:hover, .logout li a:hover, .login li a:hover{
+    color: #ffffff;
+    background-color: #FFA200;
+    border-radius: 50px;
+    padding: 9px 25px;
+}
+
+.side-list ul li i{
+    padding-right: 7px;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+    padding: 15px;
+    display: block;
+}
+
+#sidebar-active:checked ~ .side-list{
+    left: 0;
+}
+
+#sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+@media(max-width: 500px){
+
+    .service_list, .login{
+        display: block;
+    }
+    .login{
+        border-top: 1px solid #05667344;
+    }
+    .logout li{
+        margin-top: 4rem;
+    }
+    .base_list li, .service_list li, .login li{
+        padding-top: 1.5rem;
+    }
+    .nav_list, #log{
+        display: none;
+    }
+}
+
+
+.head {
+    margin-top: 8%;
+    margin-left: 7%;
+    font-size: 1.6vw;
+    letter-spacing: 3px;
+    line-height: 1;
+    font-family: 'Parkinsans', sans-serif;
+}
+
+.head1 h1 {
+    font-family: 'Parkinsans', sans-serif;
+    font-weight: 400;
+}
+
+.head2 h1 {
+    font-family: 'Parkinsans', sans-serif;
+    font-weight: 700;
+    color: #ff6000;
+}
+
+.financialPhrase {
+    font-size: 1.8vw;
+    margin-left: 12%;
+    margin-top: 10px;
+    color: #254D4C;
+}
+
+#secondLine {
+    color: #813405;
+    margin-left: 7%;
+    margin-top: 0.6%;
+}
+
+#firstLine,
+#secondLine {
+    line-height: 0.9;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 28px;
+    background: #3a5a40;
+    border: 2px solid #3a5a40;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 19px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+.btn:hover{
+    background: #fff;
+    color: #254D4C;
+}
+
+/*Footer styling*/
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    position: absolute; /* or use "absolute" if necessary */
+    bottom: 0;
+}
+
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ddd;
+}

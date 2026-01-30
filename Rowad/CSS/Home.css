@@ -1,0 +1,746 @@
+/* If you are using a font from an online service like Google Fonts (if available) */
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans&display=swap');
+body {
+  font-family: "Parkinsans", sans-serif;
+  background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+}
+/* If you have the font file */
+@font-face {
+  font-family: "Parkinsans";
+  src: url("path-to-your-font/parkinsans.woff2") format("woff2"),
+       url("path-to-your-font/parkinsans.woff") format("woff");
+}
+/* Apply the Parkinsans font globally */
+body {
+  font-family: "Parkinsans", sans-serif;
+}
+
+/* Optional: You can specifically target headers and labels if needed */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Parkinsans", sans-serif;
+}
+
+label, p, span, div {
+  font-family: "Parkinsans", sans-serif;
+}
+
+button, input, textarea {
+  font-family: "Parkinsans", sans-serif;
+}
+
+/* Reset font styles for all elements globally */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Parkinsans", sans-serif;
+}
+
+/* Dark theme styles */
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Styling for the theme toggle */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: color 0.3s;
+}
+
+.theme-toggle i {
+  transition: transform 0.3s;
+}
+
+/* Hover effect */
+.theme-toggle:hover {
+  transition: all 0.3s ease 0s;
+  color: #ffffff;
+  background-color: #FFA200;
+  border-radius: 50px;
+  padding: 9px 25px;
+}
+
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px ;
+  background-color: rgb(235, 244, 252);
+  width: 100%; 
+  position: fixed; 
+  top: 0; 
+  z-index: 10001; 
+  
+}
+
+.logo{
+  cursor: pointer;
+  width: 90px;
+}
+
+.nav_list{
+  list-style: none; 
+}
+
+
+.nav_list li{
+ display: inline-block;
+ padding: 0 20px;
+}
+
+.nav_list li a{
+  font-family: "Parkinsans", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #056773;
+}
+
+.nav_list li a:hover{
+  font-family: "Parkinsans", sans-serif;
+  color: #ffffff;
+  background-color: #FFA200;
+  border-radius: 50px;
+  padding: 9px 25px;
+}
+
+
+#log{
+  padding: 9px 25px;
+  background-color: #056773;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+#lang{
+  padding: 9px 25px;
+  background-color: #056773;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+#log:hover{
+  background-color: #FFA200;
+}
+
+nav svg{
+  fill: #056773;
+  transition: all 0.3s ease 0s;
+}
+nav svg:hover{
+  fill: #FFA200;
+}
+
+.close-sidebar-button svg{
+  padding-top: 1rem;
+}
+
+.side-list{
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  right: -350px;
+  width: 300px;
+  height: 100%;
+
+  background-color: rgb(235, 244, 252);;
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+  transition: 0.50s ease-out;
+}
+
+.base_list li, .service_list li, .login li{
+  list-style: none;
+  box-sizing: border-box;
+  height: auto;
+  width: 100%;
+  padding: 15px 30px;
+  justify-content: flex-start;
+  font-size: 16px;
+  padding-top: 2rem;
+}
+
+.service_list, .base_list{
+  border-top: 1px solid #05667344;
+}
+
+.logout li{
+  margin-top: 23rem;    
+  border-top: 3px solid #05667344;
+
+  list-style: none;
+  box-sizing: border-box;
+  height: auto;
+  width: 100%;
+  padding: 15px 30px;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #056773;
+  font-size: 16px;
+}
+
+.base_list li a, .service_list li a, .logout li a, .login li a{
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #056773;
+}
+
+.base_list li a:hover, .service_list li a:hover, .logout li a:hover, .login li a:hover{
+  color: #ffffff;
+  background-color: #FFA200;
+  border-radius: 50px;
+  padding: 9px 25px;
+}
+
+.side-list ul li i{
+  padding-right: 7px;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+  padding: 20px;
+  display: block;
+}
+
+#sidebar-active:checked ~ .side-list{
+  right: 0;
+}
+
+#sidebar-active:checked ~ #overlay{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.service_list, .login{
+  display: none;
+}
+
+.image{
+  position: relative;
+  width: 100%;
+  height: 750px;
+  opacity: 0.5;
+  background-image: url(../Media/homePage.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home{
+  display: flex;
+  margin-top: 0;
+}
+
+.intro-home h1, .intro-home p {
+  margin: 0;
+}
+
+.intro-home p {
+  text-align: center;
+}
+
+.intro1 {
+  font-size: 25px;
+}
+
+.intro2 {
+  font-size: 20px;
+}
+
+.intro1, .intro2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; 
+  transform: translateX(-100%);
+  animation-fill-mode: forwards;
+
+  text-align: center;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  color: #ffffff;
+}
+
+.intro1 h1, .intro2 h1 {
+  margin: 0;
+}
+
+.intro1 p {
+  margin-top: 10px;
+}
+
+.intro1 {
+  animation: slideIn1 10s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.intro2 {
+  animation: slideIn2 10s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  animation-delay: 5s; /* Delay exactly the duration of the first animation */
+}
+
+
+@keyframes slideIn1 {
+  0%, 15% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  25%, 75% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  85%, 100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideIn2 {
+0%, 50% {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+60%, 100% {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+
+/*Sign up button*/
+.intro-home,
+#sign {
+  /* Apply the animation to both the .intro-home container and the #sign button */
+  animation: slideInFromLeft 2s ease-out forwards;
+}
+
+
+
+#sign {
+  padding: 9px 25px;
+  background-color: #ffffff;
+  color: #5298d5;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  /* Position the button at the bottom left */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  margin-left: 200px;
+  margin-bottom: 150px;
+}
+
+#sign:hover {
+  background-color: #ffa200;
+}
+
+.hero-section {
+  display: flex;
+  margin-top: 100px;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+}
+
+.hero-content p{
+  color: #056773;
+}
+
+.hero-content h1{
+  color: #333;
+}
+
+.hero-content {
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border-radius: 8px;  
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.hero-content h1, .hero-content p {
+  padding-left: 30px;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}
+
+.hero-content h1 {
+  animation: fadeInOut 5s ease-in-out infinite;
+  font-family: "Parkinsans", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+main{
+  margin-top: 50px;
+}
+.service-section {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.service-section h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-top: 50px;
+}
+.service-section h3 {
+  font-size: 2.5em;
+  color: teal;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+  gap: 20px; /* Space between items */
+  text-align: center;
+}
+.card-container {
+  display: flex;
+  justify-content: space-around; /* Add space between cards */
+  align-items: stretch; /* Ensure all cards are the same height */
+  flex-wrap: wrap; /* Wrap cards if the screen is too small */
+  margin: 20px auto;
+  max-width: 1200px; /* Adjust container width */
+  gap: 20px; /* Optional spacing between cards */
+}
+
+.card {
+  flex: 1; /* Ensures all cards have equal width */
+  max-width: 250px; /* Optional maximum width for cards */
+  min-width: 200px; /* Optional minimum width for cards */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.card button {
+  background-color: #FFA200;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card button:hover {
+  background-color: tomato;
+}
+
+
+.ServiceLeft, .ServiceRight{
+  flex: 1 1 calc(45% - 20px);
+  max-width: 370px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.ServiceLeft:hover, .ServiceRight:hover, .card:hover{
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* For consistent styling */
+.ServiceLeft h2, .ServiceRight h2 {
+  color: #056773; /* Set heading color */
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.ServiceLeft p, .ServiceRight p {
+  color: #666; /* Set text color */
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ServiceLeft button, .ServiceRight button {
+  background-color: #FFA200;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+/* Ensure consistent button styles across both containers */
+.ServiceLeft button, .ServiceRight button {
+  width: 150px; /* Set a fixed width for both buttons */
+  height: 40px; /* Set a fixed height for both buttons */
+  font-size: 16px; /* Adjust font size if needed */
+}
+
+.ServiceLeft button:hover, .ServiceRight button:hover {
+  background-color: tomato;
+}
+
+/* Parent container for the two squares */
+.services-container-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .services-container-2 {
+    flex-direction: column; /* Stack the two squares vertically */
+    align-items: center;
+  }
+
+  .ServiceLeft, .ServiceRight {
+    width: 100%; /* Make squares take full width */
+    max-width: 400px; /* Limit the maximum width */
+  }
+}
+
+footer {
+background-color: #333;
+color: white;
+text-align: center;
+padding: 20px 0;
+}
+
+
+
+/*************contact*************/
+
+.sectionCU{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+  width: 75vw;
+  margin: 0 auto;
+  margin-top: 130px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 12px
+}
+.imageCU{
+  background-color: #597b8e;
+  display: flex;
+}
+.imageCU img{
+height:40vh;
+margin:50px auto
+}
+.contentCU{
+  background-color: #597b8e;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0  12px 12px 0;
+  color: #fff;
+}
+.contentCU h2{
+  text-transform: uppercase;
+  font-size: 36px;
+  letter-spacing: 6px;
+  opacity: 0.9;
+}
+.contentCU span{
+  height: 0.5px;
+  width: 80px;
+  background: #777;
+  margin: 20px 0;
+}
+.contentCU p{
+  padding-bottom: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  opacity: 0.7;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.7;
+  color:#ffffff
+}
+.links{
+  margin: 15px 0;
+}
+.links li{
+  border: 2px solid #4158D0;
+  list-style: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 160px;
+  text-align: center;
+}
+.links li a{
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+.links li:hover{
+  border-color: #C850C0;
+}
+
+.vertical-line{
+  height: 30px;
+  width: 3px;
+  background: #C850C0;
+  margin: 0 auto;
+}
+.icons{
+  display: flex;
+  padding: 15px 0;
+}
+.icons li{
+  display: block;
+  padding: 5px;
+  margin: 5px;
+}
+.icons li i{
+  font-size: 26px;
+  opacity: 0.8;
+}
+.icons li i:hover{
+  color: #C850C0;
+  cursor: pointer;
+}
+
+@media(max-width: 900px){
+  section{
+      grid-template-columns: 1fr;
+      width: 100%;
+      border-radius: none;
+  }
+  .image{
+      height: 100vh;
+      border-radius: none;
+  }
+  .content{
+      height: 100vh;
+      border-radius: none;
+  }
+  .content h2{
+      font-size: 20px;
+      margin-top: 50px;
+  }
+  .content span{
+      margin: 20px 0;
+  }
+  .content p{
+      font-size: 14px;
+  }
+
+
+.credit{
+  text-align: center;
+  color: #000;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.credit a{
+  text-decoration: none;
+  color:#000;
+  font-weight: bold;
+} 
+}
+
+@media(max-width: 500px){
+
+  .service_list, .login{
+      display: block;
+  }
+  .login{
+      border-top: 1px solid #05667344;
+  }
+  .logout li{
+      margin-top: 4rem;
+  }
+  .base_list li, .service_list li, .login li{
+      padding-top: 1.5rem;
+  }
+  .nav_list, #log{
+      display: none;
+  }
+}
+
+
+/*Footer styling*/
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #ddd;
+}

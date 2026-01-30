@@ -1,0 +1,440 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);
+}
+.contact-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.contact-left-title h2{
+    font-weight: 600;
+    color: #056773;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.contact-left-title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #056773;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.contact-inputs{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+.contact-left textarea{
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+.contact-inputs:focus{
+    border: 2px solid #056773;
+}
+.contact-inputs::placeholder{
+    color: #a9a9a9;
+}
+.contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg,#056773,#FFA200);
+    cursor: pointer;
+}
+.contact-left button img{
+    height: 15px;
+}
+.contact-right img{
+    width: 500px;
+}
+@media (max-width:800px) {
+    .contact-inputs{
+        width: 80vw;
+    }
+    .contact-right{
+        display: none;
+    }
+}
+
+.watch-link{
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+nav svg {
+    fill: #056773;
+    transition: all 0.3s ease 0s;
+    right: 0;
+}
+
+nav svg:hover {
+    fill: #FFA200;
+}
+
+.close-sidebar-button svg {
+    padding-top: 1rem;
+}
+
+.side-list {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    left: -370px;
+    width: 360px;
+    background-color: rgb(235, 244, 252);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.50s ease-out;
+}
+
+.base_list li, .service_list li, .login li{
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 10px 30px;
+    justify-content: flex-start;
+    font-size: 16px;
+    padding-top: 1rem;
+    margin: 13px;
+}
+
+.service_list, .base_list{
+    border-top: 1px solid #05667344;
+}
+
+.logout{
+    margin-top: 5rem;    
+    border-top: 3px solid #05667344;
+
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    padding: 15px 30px;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #056773;
+    font-size: 16px;
+}
+
+.base_list li a, .service_list li a, .logout li a, .login li a{
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #056773;
+}
+
+.base_list li a:hover, .service_list li a:hover, .logout li a:hover, .login li a:hover{
+    color: #ffffff;
+    background-color: #FFA200;
+    border-radius: 50px;
+    padding: 9px 25px;
+}
+
+.side-list ul li i{
+    padding-right: 7px;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+    padding: 15px;
+    display: block;
+}
+
+#sidebar-active:checked ~ .side-list{
+    left: 0;
+}
+
+#sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+
+@media(max-width: 500px) {
+
+    .service_list,
+    .login {
+        display: block;
+    }
+
+    .login {
+        border-top: 1px solid #05667344;
+    }
+
+    .logout li {
+        margin-top: 4rem;
+    }
+
+    .base_list li,
+    .service_list li,
+    .login li {
+        padding-top: 1.5rem;
+    }
+
+    .nav_list,
+    #log {
+        display: none;
+    }
+
+    html {
+        width: 100%;
+        height: 100vh;
+        background-position: center;
+        position: relative;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        background-color: rgb(235, 244, 252);
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1001;
+
+    }
+
+    .logo {
+        width: 75px;
+        cursor: pointer;
+    }
+
+    .nav_list {
+        list-style: none;
+    }
+
+
+    .nav_list li {
+        display: inline-block;
+        padding: 0 20px;
+    }
+
+    .nav_list li a {
+        transition: all 0.3s ease 0s;
+        text-decoration: none;
+        color: #056773;
+        font-weight: 18px;
+    }
+
+    .nav_list li a:hover {
+        color: #ffffff;
+        background-color: #FFA200;
+        border-radius: 50px;
+        padding: 9px 25px;
+    }
+
+
+    #log {
+        padding: 9px 25px;
+        margin-right: 15px;
+        background-color: #056773;
+        color: #ffffff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+
+    #log:hover {
+        background-color: #FFA200;
+    }
+
+    nav svg {
+        fill: #056773;
+        transition: all 0.3s ease 0s;
+    }
+
+    nav svg:hover {
+        fill: #FFA200;
+    }
+
+    .close-sidebar-button svg {
+        padding-top: 1rem;
+    }
+
+    .side-list {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        right: -350px;
+        width: 340px;
+
+        background-color: rgb(235, 244, 252);
+        ;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.50s ease-out;
+    }
+
+    .base_list li,
+    .service_list li,
+    .login li {
+        list-style: none;
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 15px 30px;
+        justify-content: flex-start;
+        font-size: 16px;
+        padding-top: 2rem;
+    }
+
+    .service_list,
+    .base_list {
+        border-top: 1px solid #05667344;
+    }
+
+    .logout li {
+        margin-top: 20rem;
+        border-top: 3px solid #05667344;
+
+        list-style: none;
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 15px 30px;
+        justify-content: flex-start;
+        text-decoration: none;
+        color: #056773;
+        font-size: 16px;
+    }
+
+    .base_list li a,
+    .service_list li a,
+    .logout li a,
+    .login li a {
+        transition: all 0.3s ease 0s;
+        text-decoration: none;
+        color: #056773;
+    }
+
+    .base_list li a:hover,
+    .service_list li a:hover,
+    .logout li a:hover,
+    .login li a:hover {
+        color: #ffffff;
+        background-color: #FFA200;
+        border-radius: 50px;
+        padding: 9px 25px;
+    }
+
+    .side-list ul li i {
+        padding-right: 7px;
+    }
+
+    .open-sidebar-button,
+    .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-active:checked~.side-list {
+        right: 0;
+    }
+
+    #sidebar-active:checked~#overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    #sidebar-active {
+        display: none;
+    }
+
+    .service_list,
+    .login {
+        display: none;
+    }
+
+
+    @media(max-width: 500px) {
+
+        .service_list,
+        .login {
+            display: block;
+        }
+
+        .login {
+            border-top: 1px solid #05667344;
+        }
+
+        .logout li {
+            margin-top: 4rem;
+        }
+
+        .base_list li,
+        .service_list li,
+        .login li {
+            padding-top: 1.5rem;
+        }
+
+        .nav_list,
+        #log {
+            display: none;
+        }
+    } 
+}
+
+/*Footer styling*/
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ddd;
+}

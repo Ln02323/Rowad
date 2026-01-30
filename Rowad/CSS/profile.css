@@ -1,0 +1,210 @@
+body {
+    background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);
+    font-family: "Roboto", sans-serif;
+    color: #056773;
+}
+
+h4 {
+    color: #056773;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-default,
+.btn-primary,
+.btn-outline-primary {
+    color: #056773;
+    border-color: rgba(24, 28, 33, 0.1);
+    background-color: transparent;
+}
+
+.btn-primary {
+    background-color: #056773;
+}
+
+.btn-default:hover,
+.btn-primary:hover,
+.btn-outline-primary:hover {
+    color: #CADFE0;
+    background-color: #7ABBBE;
+    border-color: #7ABBBE;
+}
+
+.card {
+    background-color: #7ABBBE;
+    box-shadow: 0 1px 4px rgba(24, 28, 33, 0.3);
+}
+
+.form-label,
+.account-settings-links .list-group-item {
+    color: #056773;
+}
+
+.account-settings-links .list-group-item.active {
+    color: #056773;
+    background-color: #7ABBBE;
+}
+
+textarea {
+    background-color: #CADFE0;
+    border-color: #056773;
+}
+
+.text-right {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.btn-default{
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.ui-w-60 {
+    width: 90px !important;
+    height: 90px;
+}
+
+.rounded-circle {
+    border-radius: 70%;
+}
+.form-group.row {
+    margin-bottom: 1rem;
+}
+
+.file-not-selected {
+    color: #7ABBBE;
+    font-size: 12px; /* Change font size as needed */
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 55px;
+}
+
+
+@media (max-width: 768px) {
+    .form-group.row {
+        flex-direction: column;
+    }
+
+    .form-group.row .col-md-6 {
+        width: 100%;
+    }
+}
+
+nav svg {
+    fill: #056773;
+    transition: all 0.3s ease 0s;
+    right: 0;
+}
+
+nav svg:hover {
+    fill: #FFA200;
+}
+
+.close-sidebar-button svg {
+    padding-top: 1rem;
+}
+
+.side-list {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    left: -370px;
+    width: 360px;
+    height: 100%;
+    background-color: rgb(235, 244, 252);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.50s ease-out;
+}
+
+.base_list li, .service_list li, .login li{
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 10px 30px;
+    justify-content: flex-start;
+    font-size: 16px;
+    padding-top: 1rem;
+}
+
+.service_list, .base_list{
+    border-top: 1px solid #05667344;
+}
+
+.logout{
+    margin-top: 5rem;    
+    border-top: 3px solid #05667344;
+
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    padding: 15px 30px;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #056773;
+    font-size: 16px;
+}
+
+.base_list li a, .service_list li a, .logout li a, .login li a{
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #056773;
+}
+
+.base_list li a:hover, .service_list li a:hover, .logout li a:hover, .login li a:hover{
+    color: #ffffff;
+    background-color: #FFA200;
+    border-radius: 50px;
+    padding: 9px 25px;
+}
+
+.side-list ul li i{
+    padding-right: 7px;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+    padding: 15px;
+    display: block;
+}
+
+#sidebar-active:checked ~ .side-list{
+    left: 0;
+}
+
+#sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+/*Footer styling*/
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ddd;
+}

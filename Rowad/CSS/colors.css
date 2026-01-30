@@ -1,0 +1,252 @@
+/* General Styling */
+body {
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    z-index: 10;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .input-group {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  input[type="color"] {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #03045e;
+    transform: scale(1.1);
+  }
+  
+  /* Palette Styling */
+  .palette-box {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .palette-box > div {
+    flex: 1;
+    transition: flex 0.3s ease;
+  }
+  
+  .palette-box > div:hover {
+    flex: 3;
+  }
+  
+  .palette-box > div span {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+  }
+  
+  .palette-box > div:hover span {
+    display: block;
+  }
+ 
+  img{
+    left: 0;
+    bottom: 0;
+    height: 20%;
+    width: 100%;
+    margin-top: -190px;
+    z-index: 1;
+  }
+
+  nav {
+    display: flex;
+    position: absolute; /* Allows precise positioning */
+    top: 0; /* Aligns it to the top */
+    left: 0; /* Aligns it to the left */
+    padding: 10px; /* Optional: Adds space around the content */
+}
+
+  nav svg {
+    fill: #056773;
+    transition: all 0.3s ease 0s;
+    right: 0;
+}
+
+nav svg:hover {
+    fill: #FFA200;
+}
+
+.close-sidebar-button svg {
+    padding-top: 1rem;
+}
+
+.side-list {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    left: -370px;
+    width: 360px;
+    background-color: rgb(235, 244, 252);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.50s ease-out;
+}
+
+.base_list li, .service_list li, .login li{
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 10px 30px;
+    justify-content: flex-start;
+    font-size: 16px;
+    padding-top: 1rem;
+    margin: 13px;
+}
+
+.service_list, .base_list{
+    border-top: 1px solid #05667344;
+}
+
+.logout{
+    margin-top: 5rem;    
+    border-top: 3px solid #05667344;
+
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    padding: 15px 30px;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #056773;
+    font-size: 16px;
+}
+
+.base_list li a, .service_list li a, .logout li a, .login li a{
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #056773;
+}
+
+.base_list li a:hover, .service_list li a:hover, .logout li a:hover, .login li a:hover{
+    color: #ffffff;
+    background-color: #FFA200;
+    border-radius: 50px;
+    padding: 9px 25px;
+}
+
+.side-list ul li i{
+    padding-right: 7px;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+    padding: 15px;
+    display: block;
+}
+
+#sidebar-active:checked ~ .side-list{
+    left: 0;
+}
+
+#sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+#sidebar-active {
+    display: none;
+}
+@media(max-width: 500px){
+
+    .service_list, .login{
+        display: block;
+    }
+    .login{
+        border-top: 1px solid #05667344;
+    }
+    .logout li{
+        margin-top: 4rem;
+    }
+    .base_list li, .service_list li, .login li{
+        padding-top: 1.5rem;
+    }
+    .nav_list, #log{
+        display: none;
+    }
+}
+
+/*Footer styling*/
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  position:relative;
+}
+
+footer p{
+  color: #fff;
+}
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #ddd;
+}

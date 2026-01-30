@@ -1,0 +1,309 @@
+* {
+    font-family: 'Parkinsans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Parkinsans', 'Roboto', sans-serif;
+    background: linear-gradient(60deg, #d5f5e8, #4c956c, #718355);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+header, footer, .inputs label, .services p, .creative-button {
+    font-family: 'Parkinsans', sans-serif;
+}
+main {
+    flex: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #056773;
+    font-size: 1.5em; /* Reduced font size */
+    font-weight: bold;
+    position: relative;
+}
+header h1 {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.7em;
+}
+.content {
+    display: flex; /* Align sections horizontally */
+    gap: 20px; /* Add space between sections */
+}
+label[for="chartType"] {
+    font-family: 'Parkinsans', sans-serif; /* Specify the desired font */
+    font-size: 16px; /* Adjust the font size if needed */
+    color: #056773; /* Optional: Adjust color to match theme */
+}
+#chartType {
+    font-family: 'Parkinsans', sans-serif; /* Apply the desired font */
+    font-size: 16px; /* Adjust the font size */
+    font-weight: 400; /* Use a normal weight */
+    color: #056773; /* Customize text color */
+    background-color: #f0f8ff; /* Optional: Background for the dropdown */
+    border: 1px solid #ccc; /* Optional: Border styling */
+    border-radius: 5px; /* Optional: Rounded corners */
+    padding: 5px 10px; /* Add spacing inside the dropdown */
+    outline: none; /* Remove default outline */
+    appearance: none; /* Consistent styling across browsers */
+    width: 100%; /* Make it full width if necessary */
+}
+.services label {
+    font-family: 'Parkinsans', sans-serif; /* Use your desired font */
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #056773; /* Optional: Match your theme's color */
+    display: block; /* Ensure each label is on a new line */
+    margin-bottom: 8px; /* Add spacing between labels */
+}
+.left-section {
+    flex: 1; /* Take up available space */
+    padding: 20px;
+    background: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right-section {
+    flex: 0.7; /* Slightly smaller than left-section */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs label,
+.services p {
+    font-weight: bold;
+    color: #056773;
+}
+
+.inputs input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.services {
+    margin-top: 20px;
+}
+
+.services label {
+    display: block;
+    margin: 5px 0;
+    color: #056773;
+}
+
+.chart-type {
+    margin: 15px 0;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+
+
+nav svg {
+    fill: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+nav svg:hover {
+    fill: #FFA200;
+}
+
+.close-sidebar-button svg {
+    padding-top: 1rem;
+}
+
+.side-list {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    left: -370px;
+    width: 360px;
+    background-color: #056773;
+    color: #fff;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.50s ease-out;
+}
+
+.base_list li, .service_list li, .login li {
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 10px 30px;
+    justify-content: flex-start;
+    font-size: 16px;
+    padding-top: 1rem;
+    margin: 13px;
+}
+
+.service_list, .base_list {
+    border-top: 1px solid #fff;
+}
+
+.logout {
+    margin-top: 5rem;    
+    border-top: 3px solid #fff;
+    list-style: none;
+    box-sizing: border-box;
+    height: auto;
+    padding: 15px 30px;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.base_list li a, .service_list li a, .logout li a, .login li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.base_list li a:hover, .service_list li a:hover, .logout li a:hover, .login li a:hover {
+    color: #056773;
+    background-color: #FFA200;
+    border-radius: 50px;
+    padding: 9px 25px;
+}
+
+.side-list ul li i {
+    padding-right: 7px;
+}
+
+.open-sidebar-button {
+    padding: 15px;
+    display: block;
+    position: absolute; /* Position it absolutely */
+    top: 15px;          /* Adjust the distance from the top */
+    left: 15px;         /* Move it to the left */
+    z-index: 100;       /* Ensure it is above other elements */
+}
+
+#sidebar-active:checked ~ .side-list {
+    left: 0;
+}
+
+#sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+@media(max-width: 500px) {
+    .service_list, .login {
+        display: block;
+    }
+    .login {
+        border-top: 1px solid #fff;
+    }
+    .logout li {
+        margin-top: 4rem;
+    }
+    .base_list li, .service_list li, .login li {
+        padding-top: 1.5rem;
+    }
+    .nav_list, #log {
+        display: none;
+    }
+}
+/* Style for the creative button */
+.creative-button {
+    background-color: #FFA200; /* Example: Green color */
+    color: white;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 16px; /* Match other element sizes */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Smooth rounded edges */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+    transition: all 0.3s ease; /* Smooth animations */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between text and icon */
+}
+
+/* Hover effect */
+.creative-button:hover {
+    background-color: #3baea0; /* Slightly darker green */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+/* Active (clicked) effect */
+.creative-button:active {
+    transform: translateY(0); /* Reset lift effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
+}
+
+/* Optional focus style for accessibility */
+.creative-button:focus {
+    outline: 2px solid #ff6f3c; /* Match the button's primary color */
+    outline-offset: 4px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #056773;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #FFA200;
+}
+.inputs input, .base_list li a, .service_list li a, .logout li a, .login li a, .side-list {
+    font-family: 'Parkinsans', sans-serif;
+}
