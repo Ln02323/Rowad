@@ -12,7 +12,7 @@ Methods and Technologies:
 - Database: MongoDB and Mongoose to store and manage user account information.
 - Location-Based Recommendations: Google Maps data, collected using Octoparse, was processed to build a business dataset. The K-Means clustering algorithm was used to group similar businesses and support location suitability recommendations.
 - Data Analysis: Python, Pandas, and Principal Component Analysis (PCA) were used to process business data, analyze patterns, and visualize clusters.
-- AI-Assisted Services: Image-generation functionality supports interior design ideas and business identity creation.
+- AI-Assisted Services: Image-generation functionality supports interior design ideas and business identity creation using API.
 - Financial Analysis: JavaScript-based calculations and charts display profit or loss, profit margin, and return on investment (ROI).
 
 ![image alt](https://github.com/Ln02323/Rowad/blob/4509a2c464b7f021fd1fd29c60f86a595167fc9b/rowad.png)
